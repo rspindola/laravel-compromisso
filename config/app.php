@@ -108,6 +108,8 @@ return [
 
     'faker_locale' => 'en_US',
 
+    \Carbon\Carbon::setLocale('pt_BR'),
+
     /*
     |--------------------------------------------------------------------------
     | Encryption Key

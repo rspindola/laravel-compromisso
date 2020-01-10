@@ -4,6 +4,10 @@
 <div class="card">
     <div class="card-header">
         {{ trans('global.show') }} {{ trans('cruds.appointment.title') }}
+
+        <a class="btn btn-info btn-sm float-right" href="{{ route('admin.appointments.sendNotification',$appointment)}}">
+            {{ trans('global.change_notifications_field_1_label') }}
+        </a>
     </div>
 
     <div class="card-body">
@@ -39,7 +43,7 @@
                             {{ trans('cruds.appointment.fields.start_time') }}
                         </th>
                         <td>
-                            {{ $appointment->start_time }}
+                            {{ \Carbon\Carbon::parse($appointment->start_time)->format('d/m/Y H:i') }}
                         </td>
                     </tr>
                     <tr>
@@ -47,7 +51,7 @@
                             {{ trans('cruds.appointment.fields.finish_time') }}
                         </th>
                         <td>
-                            {{ $appointment->finish_time }}
+                            {{ \Carbon\Carbon::parse($appointment->finish_time)->format('d/m/Y H:i') }}
                         </td>
                     </tr>
                     <tr>

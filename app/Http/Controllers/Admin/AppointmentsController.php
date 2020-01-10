@@ -14,6 +14,8 @@ use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Yajra\DataTables\Facades\DataTables;
+use Mail;
+use App\Mail\NotificationAppointmentMail;
 
 class AppointmentsController extends Controller
 {
@@ -143,5 +145,17 @@ class AppointmentsController extends Controller
         Appointment::whereIn('id', request('ids'))->delete();
 
         return response(null, Response::HTTP_NO_CONTENT);
+    }
+
+    public function sendNotification(Appointment $appointment)
+    {
+        $appointment = Appointment::where('id', $appointment['id'])->with(['client', 'employee', 'services'])->first();
+
+        Mail::to($appointment->client->email)->send(new NotificationAppointmentMail($appointment));
+        if (Mail::failures()) {
+            return response()->Fail('Sorry! Please try again latter');
+        }else{
+            return view('emails.notification', compact('appointment'));
+        }
     }
 }
