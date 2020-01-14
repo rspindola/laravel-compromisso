@@ -95,6 +95,8 @@ class AppointmentsController extends Controller
     {
         $appointment = Appointment::create($request->all());
         $appointment->services()->sync($request->input('services', []));
+        
+        $this->sendNotification($appointment);
 
         return redirect()->route('admin.appointments.index');
     }
@@ -150,8 +152,8 @@ class AppointmentsController extends Controller
     public function sendNotification(Appointment $appointment)
     {
         $appointment = Appointment::where('id', $appointment['id'])->with(['client', 'employee', 'services'])->first();
-
         Mail::to($appointment->client->email)->send(new NotificationAppointmentMail($appointment));
+
         if (Mail::failures()) {
             return response()->Fail('Sorry! Please try again latter');
         }else{

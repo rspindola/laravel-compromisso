@@ -43,7 +43,7 @@ class NotificationAppointmentMail extends Mailable
         $name = 'renato';
         return $this->view('emails.notification')
             ->from($address, $name)
-            ->cc($appointment->employee->email, $appointment->employee->name)
+            ->cc($this->appointment->employee->email, $this->appointment->employee->name)
             ->subject($subject);
     }
 }

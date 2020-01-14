@@ -240,7 +240,7 @@
                               <!-- START BODY COPY -->
                               <tr>
                                 <td class="td-padding" align="left" style="font-family: 'Roboto Mono', monospace; color: #212121!important; font-size: 24px; line-height: 30px; padding-top: 18px; padding-left: 18px!important; padding-right: 18px!important; padding-bottom: 0px!important; mso-line-height-rule: exactly; mso-padding-alt: 18px 18px 0px 13px;">
-                                  Olá, {{$appointment['client_id']}}!
+                                  Olá, {{$appointment->client->name}}!
                                 </td>
                               </tr>
                               <tr>
