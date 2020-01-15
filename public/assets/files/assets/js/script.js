@@ -127,16 +127,22 @@ $(document).ready(function () {
         $('.showChat_inner').toggle('slide', options, 500);
         $('.showChat').css('display', 'block');
     });
-    i18next.use(window.i18nextXHRBackend).init({
-        debug: !1,
-        fallbackLng: !1,
-        backend: {
-            loadPath: "../files/assets/locales/{{lng}}/{{ns}}.json"
-        },
-        returnObjects: !0
-    }, function (err, t) {
-        jqueryI18next.init(i18next, $)
-    }), $(".lng-dropdown a").on("click", function () {
+
+
+
+    /* // i18next.use(window.i18nextXHRBackend).init({
+    //     debug: !1,
+    //     fallbackLng: !1,
+    //     backend: {
+    //         loadPath: "../files/assets/locales/{{lng}}/{{ns}}.json"
+    //     },
+    //     returnObjects: !0
+    // }, function (err, t) {
+    //     jqueryI18next.init(i18next, $)
+    }), */ 
+    
+    
+    $(".lng-dropdown a").on("click", function () {
         var $this = $(this),
             selected_lng = $this.data("lng");
         i18next.changeLanguage(selected_lng, function (err, t) {

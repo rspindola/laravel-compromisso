@@ -6,7 +6,6 @@
 <head>
     <title>{{ trans('panel.site_title') }}</title>
 
-
     <!--[if lt IE 10]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -17,39 +16,33 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="#">
-    <meta name="keywords"
-        content="flat ui, admin Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+    <meta name="keywords" content="flat ui, admin Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
     <meta name="author" content="#">
 
     <link rel="icon" href="{{asset('assets/files/assets/images/favicon.ico')}}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/files/bower_components/bootstrap/css/bootstrap.min.css')}}">
-
+    <link rel="stylesheet" type="text/css" href="{{asset('bower_components/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/files/assets/icon/themify-icons/themify-icons.css')}}">
-
     <link rel="stylesheet" type="text/css" href="{{asset('assets/files/assets/icon/icofont/css/icofont.css')}}">
-
     <link rel="stylesheet" type="text/css" href="{{asset('assets/files/assets/pages/flag-icon/flag-icon.min.css')}}">
-
     <link rel="stylesheet" type="text/css" href="{{asset('assets/files/assets/pages/menu-search/css/component.css')}}">
-
     <link rel="stylesheet" type="text/css" href="{{asset('assets/files/assets/css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/files/assets/css/jquery.mCustomScrollbar.css')}}">
 
-    {{-- custom --}}
-    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
-    <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
-    <link href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css" rel="stylesheet" />
-    <link href="https://cdn.datatables.net/select/1.3.0/css/select.dataTables.min.css" rel="stylesheet" />
-
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+    {{-- dataTables --}}
+    <link rel="stylesheet" href="{{asset('bower_components/datatables/datatables.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('bower_components/datatables/DataTables-1.10.20/css/dataTables.bootstrap4.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('bower_components/datatables/Buttons-1.6.1/css/buttons.dataTables.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('bower_components/datatables/Select-1.3.1/css/select.dataTables.min.css')}}" />
+    
+    <link rel="stylesheet" href="{{asset('bower_components/font-awesome/css/font-awesome.min.css')}}">
     <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="{{asset('bower_components/select2/css/select2.min.css')}}" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet" />
+    
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet" />
     @yield('styles')
 </head>
@@ -258,144 +251,136 @@
 </div>
 <![endif]-->
 
-
-    <script type="text/javascript" src="{{asset('assets/files/bower_components/jquery/js/jquery.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/files/bower_components/jquery-ui/js/jquery-ui.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/files/bower_components/popper.js/js/popper.min.js')}}"></script>
-
-    <script type="text/javascript" src="{{asset('assets/files/bower_components/bootstrap/js/bootstrap.min.js')}}"></script>
-
-    <script type="text/javascript" src="{{asset('assets/files/bower_components/jquery-slimscroll/js/jquery.slimscroll.js')}}"></script>
-
-    <script type="text/javascript" src="{{asset('assets/files/bower_components/modernizr/js/modernizr.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/files/bower_components/modernizr/js/css-scrollbars.js')}}"></script>
-
-    <script type="text/javascript" src="{{asset('assets/files/bower_components/i18next/js/i18next.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/files/bower_components/i18next-xhr-backend/js/i18nextXHRBackend.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/files/bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/files/bower_components/jquery-i18next/js/jquery-i18next.min.js')}}"></script>
+    {{-- essentials --}}
+    <script src="{{asset('bower_components/jquery/js/jquery.min.js')}}"></script>
+    <script src="{{asset('bower_components/jquery-ui/js/jquery-ui.min.js')}}"></script>
+    <script src="{{asset('bower_components/popper.js/js/popper.min.js')}}"></script>
+    <script src="{{asset('bower_components/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('bower_components/jquery-slimscroll/js/jquery.slimscroll.js')}}"></script>
+    <script src="{{asset('bower_components/modernizr/js/modernizr.js')}}"></script>
+    <script src="{{asset('bower_components/modernizr/js/css-scrollbars.js')}}"></script>
+        
     <script src="{{asset('assets/files/assets/js/pcoded.min.js')}}"></script>
     <script src="{{asset('assets/files/assets/js/demo-dark-light.js')}}"></script>
     <script src="{{asset('assets/files/assets/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
     
-    {{-- datatables --}}
+    
     <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.min.js"></script>
+    <script src="{{asset('bower_components/moment/js/moment.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>    
+    <script src="{{asset('bower_components/select2/js/select2.full.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
     
-    <script type="text/javascript" src="{{asset('assets/files/assets/js/script.js')}}"></script>
-    
-    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-    <script src="//cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
-    <script src="//cdn.datatables.net/buttons/1.2.4/js/buttons.flash.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.print.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.colVis.min.js"></script>
-    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
-    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-    <script src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
+    {{-- datatables --}}
+    <script src="{{asset('bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('bower_components/datatables.net-buttons/js/dataTables.buttons.min.js')}}"></script>
+    <script src="{{asset('bower_components/datatables.net-buttons/js/buttons.html5.min.js')}}"></script>    
+    <script src="{{asset('bower_components/datatables/Buttons-1.6.1/js/buttons.flash.min.js')}}"></script>
+    <script src="{{asset('bower_components/datatables/Buttons-1.6.1/js/buttons.print.min.js')}}"></script>
+    <script src="{{asset('bower_components/datatables/Buttons-1.6.1/js/buttons.colVis.min.js')}}"></script>
+    <script src="{{asset('bower_components/datatables/pdfmake-0.1.36/pdfmake.min.js')}}"></script>
+    <script src="{{asset('bower_components/datatables/pdfmake-0.1.36/vfs_fonts.js')}}"></script>
+    <script src="{{asset('bower_components/datatables/JSZip-2.5.0/jszip.min.js')}}"></script>
+    <script src="{{asset('bower_components/datatables/Select-1.3.1/js/dataTables.select.min.js')}}"></script>
 
-<script>
-    $(function() {
-        let copyButtonTrans = '{{ trans('global.datatables.copy') }}'
-        let csvButtonTrans = '{{ trans('global.datatables.csv') }}'
-        let excelButtonTrans = '{{ trans('global.datatables.excel') }}'
-        let pdfButtonTrans = '{{ trans('global.datatables.pdf') }}'
-        let printButtonTrans = '{{ trans('global.datatables.print') }}'
-        let colvisButtonTrans = '{{ trans('global.datatables.colvis') }}'
+    {{-- custom --}}
+    <script src="{{asset('assets/files/assets/js/script.js')}}"></script>
+    <script>
+        $(function() {
+            let copyButtonTrans = '{{ trans('global.datatables.copy') }}'
+            let csvButtonTrans = '{{ trans('global.datatables.csv') }}'
+            let excelButtonTrans = '{{ trans('global.datatables.excel') }}'
+            let pdfButtonTrans = '{{ trans('global.datatables.pdf') }}'
+            let printButtonTrans = '{{ trans('global.datatables.print') }}'
+            let colvisButtonTrans = '{{ trans('global.datatables.colvis') }}'
 
-        let languages = {
-            'en': 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/English.json',
-            'pt-BR': 'https:////cdn.datatables.net/plug-ins/1.10.20/i18n/Portuguese-Brasil.json'
-        };
+            let languages = {
+                'en': 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/English.json',
+                'pt-BR': 'https:////cdn.datatables.net/plug-ins/1.10.20/i18n/Portuguese-Brasil.json'
+            };
 
-        $.extend(true, $.fn.dataTable.Buttons.defaults.dom.button, { className: 'btn' })
-        $.extend(true, $.fn.dataTable.defaults, {
-        language: {
-            url: languages['pt-BR']
-            // url: languages['{{ app()->getLocale() }}']
-        },
-        columnDefs: [{
-            orderable: false,
-            className: 'select-checkbox',
-            targets: 0
-        }, {
-            orderable: false,
-            searchable: false,
-            targets: -1
-        }],
-        select: {
-            style:    'multi+shift',
-            selector: 'td:first-child'
-        },
-        order: [],
-        scrollX: true,
-        pageLength: 100,
-        dom: 'lBfrtip<"actions">',
-        buttons: [
-            {
-                extend: 'copy',
-                className: 'btn-default btn-xs',
-                text: copyButtonTrans,
-                exportOptions: {
-                    columns: ':visible'
-                }
+            $.extend(true, $.fn.dataTable.Buttons.defaults.dom.button, { className: 'btn' })
+            $.extend(true, $.fn.dataTable.defaults, {
+            language: {
+                url: languages['pt-BR']
+                // url: languages['{{ app()->getLocale() }}']
             },
-            {
-                extend: 'csv',
-                className: 'btn-default btn-xs',
-                text: csvButtonTrans,
-                exportOptions: {
-                    columns: ':visible'
-                }
+            columnDefs: [{
+                orderable: false,
+                className: 'select-checkbox',
+                targets: 0
+            }, {
+                orderable: false,
+                searchable: false,
+                targets: -1
+            }],
+            select: {
+                style:    'multi+shift',
+                selector: 'td:first-child'
             },
-            {
-                extend: 'excel',
-                className: 'btn-default btn-xs',
-                text: excelButtonTrans,
-                exportOptions: {
-                    columns: ':visible'
+            order: [],
+            scrollX: true,
+            pageLength: 100,
+            dom: 'lBfrtip<"actions">',
+            buttons: [
+                {
+                    extend: 'copy',
+                    className: 'btn-default btn-xs',
+                    text: copyButtonTrans,
+                    exportOptions: {
+                        columns: ':visible'
+                    }
+                },
+                {
+                    extend: 'csv',
+                    className: 'btn-default btn-xs',
+                    text: csvButtonTrans,
+                    exportOptions: {
+                        columns: ':visible'
+                    }
+                },
+                {
+                    extend: 'excel',
+                    className: 'btn-default btn-xs',
+                    text: excelButtonTrans,
+                    exportOptions: {
+                        columns: ':visible'
+                    }
+                },
+                {
+                    extend: 'pdf',
+                    className: 'btn-default btn-xs',
+                    text: pdfButtonTrans,
+                    exportOptions: {
+                        columns: ':visible'
+                    }
+                },
+                {
+                    extend: 'print',
+                    className: 'btn-default btn-xs',
+                    text: printButtonTrans,
+                    exportOptions: {
+                        columns: ':visible'
+                    }
+                },
+                {
+                    extend: 'colvis',
+                    className: 'btn-default btn-xs',
+                    text: colvisButtonTrans,
+                    exportOptions: {
+                        columns: ':visible'
+                    }
                 }
-            },
-            {
-                extend: 'pdf',
-                className: 'btn-default btn-xs',
-                text: pdfButtonTrans,
-                exportOptions: {
-                    columns: ':visible'
-                }
-            },
-            {
-                extend: 'print',
-                className: 'btn-default btn-xs',
-                text: printButtonTrans,
-                exportOptions: {
-                    columns: ':visible'
-                }
-            },
-            {
-                extend: 'colvis',
-                className: 'btn-default btn-xs',
-                text: colvisButtonTrans,
-                exportOptions: {
-                    columns: ':visible'
-                }
-            }
-        ]
+            ]
+            });
+
+            $.fn.dataTable.ext.classes.sPageButton = '';
         });
 
-        $.fn.dataTable.ext.classes.sPageButton = '';
-    });
-
-</script>
+    </script>
     
     @yield('scripts')
 </body>
-
-<!-- Mirrored from html.codedthemes.com/guru-able/dark-light/sample-page.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 07 Dec 2017 13:00:50 GMT -->
 
 </html>

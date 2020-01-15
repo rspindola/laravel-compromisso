@@ -1,17 +1,18 @@
 @can($viewGate)
-    <a class="btn btn-xs btn-primary" href="{{ route('admin.' . $crudRoutePart . '.show', $row->id) }}">
-        {{ trans('global.view') }}
-    </a>
+    <a href="{{ route('admin.' . $crudRoutePart . '.show', $row->id) }}"class="m-r-15 text-muted" title="Ver" data-original-title="Ver"><i class="icofont icofont-ui-folder"></i></a>
 @endcan
 @can($editGate)
-    <a class="btn btn-xs btn-info" href="{{ route('admin.' . $crudRoutePart . '.edit', $row->id) }}">
-        {{ trans('global.edit') }}
-    </a>
+    <a href="{{ route('admin.' . $crudRoutePart . '.edit', $row->id) }}" class="m-r-15 text-muted" title="Editar" data-original-title="Editar"><i class="icofont icofont-ui-edit"></i></a>
 @endcan
 @can($deleteGate)
-    <form action="{{ route('admin.' . $crudRoutePart . '.destroy', $row->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+    <a href="javascript:void(0);" onclick="teste()" data-id="{{$row->id}}"
+        class="text-muted alert-success-cancel">
+        <i class="icofont icofont-delete-alt"></i></a>
+
+
+    {{-- <form action="{{ route('admin.' . $crudRoutePart . '.destroy', $row->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;" data-id="{{$dataId}}">
         <input type="hidden" name="_method" value="DELETE">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
-    </form>
+    </form> --}}
 @endcan
