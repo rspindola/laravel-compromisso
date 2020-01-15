@@ -8,7 +8,7 @@
                     <i class="icofont icofont icofont icofont-file-document bg-c-pink"></i>
                     <div class="d-inline">
                         <h4>{{ trans('cruds.permission.title') }}</h4>
-                        <span>Lista de usuários cadastrados no sistema</span>
+                        <span>Lista de permissões cadastrados no sistema</span>
                     </div>
                 </div>
             </div>

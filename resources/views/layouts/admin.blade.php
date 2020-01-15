@@ -177,8 +177,9 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="auth-normal-sign-in.html">
-                                            <i class="ti-layout-sidebar-left"></i> Logout
+                                        <a href="javascript:void(0);"
+                                        onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
+                                            <i class="ti-layout-sidebar-left"></i> {{ trans('global.logout') }}
                                         </a>
                                     </li>
                                 </ul>

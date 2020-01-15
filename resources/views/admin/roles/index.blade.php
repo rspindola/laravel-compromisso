@@ -34,14 +34,11 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-md-4">
-                                {{ trans('cruds.role.title_singular') }} {{ trans('global.list') }}
-                            </div>
-                            <div class="col-md-8 pull-right">
+                            <div class="col-md-12 pull-right">
                                 @can('role_create')
-                                    <div style="margin-bottom: 10px;" class="row">
+                                    <div  class="row">
                                         <div class="col-lg-12 text-right">
-                                            <a class="btn btn-success" href="{{ route("admin.roles.create") }}">
+                                            <a class="btn btn-sm btn-success" href="{{ route("admin.roles.create") }}">
                                                 {{ trans('global.add') }} {{ trans('cruds.role.title_singular') }}
                                             </a>
                                         </div>

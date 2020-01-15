@@ -1,18 +1,51 @@
 @extends('layouts.admin')
-@section('content')
+@section('styles')
 <link href='https://unpkg.com/@fullcalendar/core@4.3.1/main.min.css' rel='stylesheet' />
 <link href='https://unpkg.com/@fullcalendar/daygrid@4.3.0/main.min.css' rel='stylesheet' />
 <link href='https://unpkg.com/@fullcalendar/timegrid@4.3.0/main.min.css' rel='stylesheet' />
 <link href='https://unpkg.com/@fullcalendar/list@4.3.0/main.min.css' rel='stylesheet' />
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css' />
-<h3 class="page-title">{{ trans('global.systemCalendar') }}</h3>
-<div class="card">
-    <div class="card-header">
-        {{ trans('global.systemCalendar') }}
+@endsection
+@section('content')
+<div class="page-wrapper">                           
+    <div class="page-header card">
+        <div class="row align-items-end">
+            <div class="col-lg-8">
+                <div class="page-header-title">
+                    <i
+                        class="icofont icofont icofont icofont-file-document bg-c-pink"></i>
+                    <div class="d-inline">
+                        <h4>{{ trans('global.systemCalendar') }}</h4>
+                        <span>Calendário com os horários cadastrados no sistema</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="page-header-breadcrumb">
+                    <ul class="breadcrumb-title">
+                        <li class="breadcrumb-item">
+                            <a href="index-2.html">
+                                <i class="icofont icofont-home"></i>
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item"><a href="#!">{{ trans('global.systemCalendar') }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="card-body">
-        <div id='calendar'></div>
+    <div class="page-body">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div id='calendar'></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 @endsection

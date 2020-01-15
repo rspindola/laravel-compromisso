@@ -128,8 +128,8 @@ return [
         ],
     ],
     'appointment'    => [
-        'title'          => 'Horários Marcados',
-        'title_singular' => 'Horário Marcado',
+        'title'          => 'Compromissos',
+        'title_singular' => 'Compromisso',
         'fields'         => [
             'id'                 => 'ID',
             'id_helper'          => '',
