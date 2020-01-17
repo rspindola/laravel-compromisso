@@ -50,7 +50,7 @@
                             </div>
                             <div class="form-group {{ $errors->has('price') ? 'has-error' : '' }}">
                                 <label for="price">{{ trans('cruds.service.fields.price') }}</label>
-                                <input type="number" id="price" name="price" class="form-control" value="{{ old('price', isset($service) ? $service->price : '') }}" step="0.01">
+                                <input type="text" id="price" name="price" class="form-control money" value="{{ old('price', isset($service) ? $service->price : '') }}" maxlength="6">
                                 @if($errors->has('price'))
                                     <em class="invalid-feedback">
                                         {{ $errors->first('price') }}
@@ -64,8 +64,6 @@
                                 <input class="btn btn-danger" type="submit" value="{{ trans('global.save') }}">
                             </div>
                         </form>
-
-
                     </div>
                 </div>
             </div>
@@ -73,3 +71,11 @@
     </div>
 </div>
 @endsection
+@section('scripts')
+    <script src="{{asset('bower_components/jquery-mask/dist/jquery.mask.min.js')}}"></script>
+    <script>
+        $(document).ready(function(){
+            $('.money').mask('#.##0,00', {reverse: true});
+        });
+    </script>
+@endsection   

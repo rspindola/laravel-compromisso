@@ -8,5 +8,13 @@ $factory->define(Client::class, function (Faker $faker) {
         'name' => $faker->name,
         'email' => $faker->email,
         'phone' => $faker->phoneNumber,
+        'genre' => 'M',
+        'birth_date' => $faker->date->format('Y-m-d'),
+        'zipcode' => $faker->postcode,
+        'address' => $faker->streetAddress,
+        'number' => $faker->buildingNumber,
+        'neighborhood' => $faker->state,
+        'city' => $faker->city,
+        'county' => $faker->country,
     ];
 });

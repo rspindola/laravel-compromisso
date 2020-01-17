@@ -93,6 +93,7 @@ class AppointmentsController extends Controller
 
     public function store(StoreAppointmentRequest $request)
     {
+        return dd($request->all());
         $appointment = Appointment::create($request->all());
         $appointment->services()->sync($request->input('services', []));
         

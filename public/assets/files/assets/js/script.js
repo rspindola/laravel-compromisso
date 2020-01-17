@@ -204,16 +204,25 @@ $(document).ready(function () {
     })
   
     $('.date').datetimepicker({
-      format: 'DD-MM-YYYY',
       locale: 'pt-br'
     })
   
     $('.datetime').datetimepicker({
-      format: 'DD-MM-YYYY HH:mm',
+      format: 'DD/MM/YYYY HH:mm',
       locale: 'pt-br',
       sideBySide: true,
       stepping: 15
     })
+
+    $('#finish_time').datetimepicker({
+        useCurrent: false //Important! See issue #1075
+    });
+    $("#start_time").on("dp.change", function (e) {
+        $('#finish_time').data("DateTimePicker").minDate(e.date);
+    });
+    $("#finish_time").on("dp.change", function (e) {
+        $('#start_time').data("DateTimePicker").maxDate(e.date);
+    });
   
     $('.timepicker').datetimepicker({
       format: 'HH:mm:ss'

@@ -50,7 +50,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="card-body">
                         <table class=" table table-bordered table-striped table-hover ajaxTable datatable datatable-Employee">
                             <thead>
@@ -134,14 +133,14 @@
     aaSorting: [],
     ajax: "{{ route('admin.employees.index') }}",
     columns: [
-      { data: 'placeholder', name: 'placeholder' },
-{ data: 'id', name: 'id' },
-{ data: 'name', name: 'name' },
-{ data: 'email', name: 'email' },
-{ data: 'phone', name: 'phone' },
-{ data: 'photo', name: 'photo', sortable: false, searchable: false },
-{ data: 'services', name: 'services.name' },
-{ data: 'actions', name: '{{ trans('global.actions') }}' }
+        { data: 'placeholder', name: 'placeholder' },
+        { data: 'id', name: 'id' },
+        { data: 'name', name: 'name' },
+        { data: 'email', name: 'email' },
+        { data: 'phone', name: 'phone' },
+        { data: 'photo', name: 'photo', sortable: false, searchable: false },
+        { data: 'services', name: 'services.name' },
+        { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],
     order: [[ 1, 'asc' ]],
     pageLength: 100,

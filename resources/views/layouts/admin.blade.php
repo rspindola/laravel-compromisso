@@ -41,7 +41,7 @@
     
     <link rel="stylesheet" href="{{asset('bower_components/select2/css/select2.min.css')}}" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet" />
+    <link href="{{asset('bower_components/dropzone/dist/min/dropzone.min.css')}}" rel="stylesheet" />
     
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet" />
     @yield('styles')
@@ -264,18 +264,17 @@
     <script src="{{asset('assets/files/assets/js/demo-dark-light.js')}}"></script>
     <script src="{{asset('assets/files/assets/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
     
-    
     <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
     <script src="{{asset('bower_components/moment/js/moment.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>    
     <script src="{{asset('bower_components/select2/js/select2.full.min.js')}}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
+    <script src="{{asset('bower_components/dropzone/dist/min/dropzone.min.js')}}"></script>
     
     {{-- datatables --}}
-    <script src="{{asset('bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
-    <script src="{{asset('bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
-    <script src="{{asset('bower_components/datatables.net-buttons/js/dataTables.buttons.min.js')}}"></script>
-    <script src="{{asset('bower_components/datatables.net-buttons/js/buttons.html5.min.js')}}"></script>    
+    <script src="{{asset('bower_components/datatables/DataTables-1.10.20/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('bower_components/datatables/DataTables-1.10.20/js/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('bower_components/datatables/Buttons-1.6.1/js/dataTables.buttons.min.js')}}"></script>
+    <script src="{{asset('bower_components/datatables/Buttons-1.6.1/js/buttons.html5.min.js')}}"></script>
     <script src="{{asset('bower_components/datatables/Buttons-1.6.1/js/buttons.flash.min.js')}}"></script>
     <script src="{{asset('bower_components/datatables/Buttons-1.6.1/js/buttons.print.min.js')}}"></script>
     <script src="{{asset('bower_components/datatables/Buttons-1.6.1/js/buttons.colVis.min.js')}}"></script>

@@ -24,7 +24,7 @@
             </div>
             <div class="form-group {{ $errors->has('phone') ? 'has-error' : '' }}">
                 <label for="phone">{{ trans('cruds.client.fields.phone') }}</label>
-                <input type="text" id="phone" name="phone" class="form-control" value="{{ old('phone', isset($client) ? $client->phone : '') }}">
+                <input type="text" id="phone" name="phone" class="phone form-control" value="{{ old('phone', isset($client) ? $client->phone : '') }}">
                 @if($errors->has('phone'))
                     <em class="invalid-feedback">
                         {{ $errors->first('phone') }}
@@ -55,3 +55,11 @@
     </div>
 </div>
 @endsection
+@section('scripts')
+    <script src="{{asset('bower_components/jquery-mask/dist/jquery.mask.min.js')}}"></script>
+    <script>
+        $(document).ready(function(){
+            $('.phone').mask('(99) 99999-9999');
+        });
+    </script>
+@endsection   
