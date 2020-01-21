@@ -74,7 +74,7 @@ class RolesController extends Controller
 
         $role->delete();
 
-        return back();
+        // return back();
     }
 
     public function massDestroy(MassDestroyRoleRequest $request)

@@ -74,7 +74,7 @@ class UsersController extends Controller
 
         $user->delete();
 
-        return back();
+        // return back();
     }
 
     public function massDestroy(MassDestroyUserRequest $request)

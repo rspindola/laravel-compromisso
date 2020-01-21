@@ -137,10 +137,7 @@ class AppointmentsController extends Controller
     public function destroy(Appointment $appointment)
     {
         abort_if(Gate::denies('appointment_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-
         $appointment->delete();
-
-        return back();
     }
 
     public function massDestroy(MassDestroyAppointmentRequest $request)

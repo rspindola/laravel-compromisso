@@ -29,7 +29,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/files/assets/pages/menu-search/css/component.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/files/assets/css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/files/assets/css/jquery.mCustomScrollbar.css')}}">
-
+    <link rel="stylesheet" href="{{asset('bower_components/sweetalert/css/sweetalert.css')}}" />
     {{-- dataTables --}}
     <link rel="stylesheet" href="{{asset('bower_components/datatables/datatables.min.css')}}" />
     <link rel="stylesheet" href="{{asset('bower_components/datatables/DataTables-1.10.20/css/dataTables.bootstrap4.min.css')}}" />
@@ -269,6 +269,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>    
     <script src="{{asset('bower_components/select2/js/select2.full.min.js')}}"></script>
     <script src="{{asset('bower_components/dropzone/dist/min/dropzone.min.js')}}"></script>
+    <script src="{{asset('bower_components/sweetalert/js/sweetalert.min.js')}}"></script>
     
     {{-- datatables --}}
     <script src="{{asset('bower_components/datatables/DataTables-1.10.20/js/jquery.dataTables.min.js')}}"></script>
@@ -282,6 +283,8 @@
     <script src="{{asset('bower_components/datatables/pdfmake-0.1.36/vfs_fonts.js')}}"></script>
     <script src="{{asset('bower_components/datatables/JSZip-2.5.0/jszip.min.js')}}"></script>
     <script src="{{asset('bower_components/datatables/Select-1.3.1/js/dataTables.select.min.js')}}"></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     {{-- custom --}}
     <script src="{{asset('assets/files/assets/js/script.js')}}"></script>

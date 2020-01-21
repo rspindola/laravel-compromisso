@@ -117,11 +117,14 @@
                                                 @endcan
                 
                                                 @can('user_delete')
-                                                    <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                                <a href="javascript:void(0);" onclick="deleteData({{$user->id}})"
+                                                    class="text-muted alert-success-cancel">
+                                                    <i class="icofont icofont-delete-alt"></i></a>
+                                                    {{-- <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                                         <input type="hidden" name="_method" value="DELETE">
                                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                         <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
-                                                    </form>
+                                                    </form> --}}
                                                 @endcan
                 
                                             </td>
@@ -185,6 +188,48 @@
             .columns.adjust();
     });
 })
+
+function deleteData($id){
+        var id = $id
+        console.log(id)
+        var data_table = $('#dataTables-example').DataTable();
+        var url = '{{ route("admin.users.destroy", ":id") }}';
+        url = url.replace(':id', id);
+        console.log(url)
+        var removeClass = '#row-id-'+id
+        swal({
+            title: "CONFIRMAÇÃO",
+            text: "Você tem certeza que deseja excluir?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "Sim, deletar!",
+            cancelButtonText: "Não, cancelar!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }, function (isConfirm) {
+            if (isConfirm) {
+                axios.delete(url)
+                    .then(function (response) {
+                        // handle success
+                        console.log(response);
+                        $(removeClass).remove();
+                        swal("Deletado!", "Cliente excluído com sucesso.", "success");
+                        // location.reload();
+                    })
+                    .catch(function (error) {
+                        // handle error
+                        console.log(error);
+                        swal("Error", "Error :)", "error");
+                    })
+                    .finally(function () {
+                        // always executed
+                    });
+            } else {
+                swal("Cancelado", "Seu cliente está a salvo :)", "error");
+            }
+        });
+    }
 
 </script>
 @endsection

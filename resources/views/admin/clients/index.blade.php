@@ -126,12 +126,12 @@
     aaSorting: [],
     ajax: "{{ route('admin.clients.index') }}",
     columns: [
-      { data: 'placeholder', name: 'placeholder' },
-{ data: 'id', name: 'id' },
-{ data: 'name', name: 'name' },
-{ data: 'phone', name: 'phone' },
-{ data: 'email', name: 'email' },
-{ data: 'actions', name: '{{ trans('global.actions') }}' }
+        { data: 'placeholder', name: 'placeholder' },
+        { data: 'id', name: 'id' },
+        { data: 'name', name: 'name' },
+        { data: 'phone', name: 'phone' },
+        { data: 'email', name: 'email' },
+        { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],
     order: [[ 1, 'asc' ]],
     pageLength: 100,
@@ -142,6 +142,46 @@
             .columns.adjust();
     });
 });
-
+function deleteData($id){
+    var id = $id
+    console.log(id)
+    var data_table = $('#dataTables-example').DataTable();
+    var url = '{{ route("admin.clients.destroy", ":id") }}';
+    url = url.replace(':id', id);
+    console.log(url)
+    var removeClass = '#row-id-'+id
+    swal({
+        title: "CONFIRMAÇÃO",
+        text: "Você tem certeza que deseja excluir?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonClass: "btn-danger",
+        confirmButtonText: "Sim, deletar!",
+        cancelButtonText: "Não, cancelar!",
+        closeOnConfirm: false,
+        closeOnCancel: false
+    }, function (isConfirm) {
+        if (isConfirm) {
+            axios.delete(url)
+                .then(function (response) {
+                    // handle success
+                    console.log(response);
+                    $(removeClass).remove();
+                    swal("Deletado!", "Cliente excluído com sucesso.", "success");
+                    // location.reload();
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                    swal("Error", "Error :)", "error");
+                })
+                .finally(function () {
+                    // always executed
+                });
+        } else {
+            swal("Cancelado", "Seu cliente está a salvo :)", "error");
+        }
+    });
+}
 </script>
 @endsection

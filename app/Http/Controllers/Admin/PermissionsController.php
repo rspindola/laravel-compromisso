@@ -63,7 +63,7 @@ class PermissionsController extends Controller
 
         $permission->delete();
 
-        return back();
+        // return back();
     }
 
     public function massDestroy(MassDestroyPermissionRequest $request)

@@ -96,11 +96,15 @@
                                                 @endcan
                 
                                                 @can('permission_delete')
-                                                    <form action="{{ route('admin.permissions.destroy', $permission->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                                <a href="javascript:void(0);" onclick="deleteData({{$permission->id}})"
+                                                    class="text-muted alert-success-cancel">
+                                                    <i class="icofont icofont-delete-alt"></i></a>
+
+                                                    {{-- <form action="{{ route('admin.permissions.destroy', $permission->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                                         <input type="hidden" name="_method" value="DELETE">
                                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                         <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
-                                                    </form>
+                                                    </form> --}}
                                                 @endcan
                 
                                             </td>
@@ -121,47 +125,89 @@
 @parent
 <script>
     $(function () {
-  let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
-@can('permission_delete')
-  let deleteButtonTrans = '{{ trans('global.datatables.delete') }}'
-  let deleteButton = {
-    text: deleteButtonTrans,
-    url: "{{ route('admin.permissions.massDestroy') }}",
-    className: 'btn-default btn-xs',
-    action: function (e, dt, node, config) {
-      var ids = $.map(dt.rows({ selected: true }).nodes(), function (entry) {
-          return $(entry).data('entry-id')
-      });
+        let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
+        @can('permission_delete')
+            let deleteButtonTrans = '{{ trans('global.datatables.delete') }}'
+            let deleteButton = {
+                text: deleteButtonTrans,
+                url: "{{ route('admin.permissions.massDestroy') }}",
+                className: 'btn-default btn-xs',
+                action: function (e, dt, node, config) {
+                var ids = $.map(dt.rows({ selected: true }).nodes(), function (entry) {
+                    return $(entry).data('entry-id')
+                });
 
-      if (ids.length === 0) {
-        alert('{{ trans('global.datatables.zero_selected') }}')
+                if (ids.length === 0) {
+                    alert('{{ trans('global.datatables.zero_selected') }}')
 
-        return
-      }
+                    return
+                }
 
-      if (confirm('{{ trans('global.areYouSure') }}')) {
-        $.ajax({
-          headers: {'x-csrf-token': _token},
-          method: 'POST',
-          url: config.url,
-          data: { ids: ids, _method: 'DELETE' }})
-          .done(function () { location.reload() })
-      }
+                if (confirm('{{ trans('global.areYouSure') }}')) {
+                    $.ajax({
+                    headers: {'x-csrf-token': _token},
+                    method: 'POST',
+                    url: config.url,
+                    data: { ids: ids, _method: 'DELETE' }})
+                    .done(function () { location.reload() })
+                }
+                }
+            }
+            dtButtons.push(deleteButton)
+        @endcan
+
+        $.extend(true, $.fn.dataTable.defaults, {
+            order: [[ 1, 'asc' ]],
+            pageLength: 100,
+        });
+        $('.datatable-Permission:not(.ajaxTable)').DataTable({ buttons: dtButtons })
+            $('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
+                $($.fn.dataTable.tables(true)).DataTable()
+                    .columns.adjust();
+            });
+    })
+
+    function deleteData($id){
+        var id = $id
+        console.log(id)
+        var data_table = $('#dataTables-example').DataTable();
+        var url = '{{ route("admin.permissions.destroy", ":id") }}';
+        url = url.replace(':id', id);
+        console.log(url)
+        var removeClass = '#row-id-'+id
+        swal({
+            title: "CONFIRMAÇÃO",
+            text: "Você tem certeza que deseja excluir?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "Sim, deletar!",
+            cancelButtonText: "Não, cancelar!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }, function (isConfirm) {
+            if (isConfirm) {
+                axios.delete(url)
+                    .then(function (response) {
+                        // handle success
+                        console.log(response);
+                        $(removeClass).remove();
+                        swal("Deletado!", "Cliente excluído com sucesso.", "success");
+                        // location.reload();
+                    })
+                    .catch(function (error) {
+                        // handle error
+                        console.log(error);
+                        swal("Error", "Error :)", "error");
+                    })
+                    .finally(function () {
+                        // always executed
+                    });
+            } else {
+                swal("Cancelado", "Seu cliente está a salvo :)", "error");
+            }
+        });
     }
-  }
-  dtButtons.push(deleteButton)
-@endcan
-
-  $.extend(true, $.fn.dataTable.defaults, {
-    order: [[ 1, 'asc' ]],
-    pageLength: 100,
-  });
-  $('.datatable-Permission:not(.ajaxTable)').DataTable({ buttons: dtButtons })
-    $('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
-        $($.fn.dataTable.tables(true)).DataTable()
-            .columns.adjust();
-    });
-})
 
 </script>
 @endsection

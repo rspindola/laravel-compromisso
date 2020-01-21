@@ -97,7 +97,7 @@ class ServicesController extends Controller
 
         $service->delete();
 
-        return back();
+        // return back();
     }
 
     public function massDestroy(MassDestroyServiceRequest $request)

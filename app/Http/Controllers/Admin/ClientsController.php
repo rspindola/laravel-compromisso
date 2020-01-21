@@ -100,7 +100,7 @@ class ClientsController extends Controller
 
         $client->delete();
 
-        return back();
+        // return back();
     }
 
     public function massDestroy(MassDestroyClientRequest $request)

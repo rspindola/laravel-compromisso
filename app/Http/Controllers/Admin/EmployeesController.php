@@ -146,7 +146,7 @@ class EmployeesController extends Controller
 
         $employee->delete();
 
-        return back();
+        // return back();
     }
 
     public function massDestroy(MassDestroyEmployeeRequest $request)

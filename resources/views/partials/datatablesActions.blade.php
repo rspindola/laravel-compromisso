@@ -5,7 +5,7 @@
     <a href="{{ route('admin.' . $crudRoutePart . '.edit', $row->id) }}" class="m-r-15 text-muted" title="Editar" data-original-title="Editar"><i class="icofont icofont-ui-edit"></i></a>
 @endcan
 @can($deleteGate)
-    <a href="javascript:void(0);" onclick="teste()" data-id="{{$row->id}}"
+    <a href="javascript:void(0);" onclick="deleteData({{$row->id}})"
         class="text-muted alert-success-cancel">
         <i class="icofont icofont-delete-alt"></i></a>
 
