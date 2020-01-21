@@ -9,7 +9,7 @@ $factory->define(Client::class, function (Faker $faker) {
         'email' => $faker->email,
         'phone' => $faker->phoneNumber,
         'genre' => 'M',
-        'birth_date' => $faker->date->format('Y-m-d'),
+        'birth_date' => $faker->date,
         'zipcode' => $faker->postcode,
         'address' => $faker->streetAddress,
         'number' => $faker->buildingNumber,

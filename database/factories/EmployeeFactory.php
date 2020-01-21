@@ -9,7 +9,7 @@ $factory->define(Employee::class, function (Faker $faker) {
         'email' => $faker->email,
         'phone' => $faker->phoneNumber,
         'genre' => 'M',
-        'birth_date' => $faker->dateTimeThisCentury->format('Y-m-d'),
+        'birth_date' => $faker->dateTimeThisCentury,
         'zipcode' => $faker->postcode,
         'address' => $faker->streetAddress,
         'number' => $faker->buildingNumber,

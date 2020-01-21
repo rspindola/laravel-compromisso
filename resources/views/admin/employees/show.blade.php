@@ -90,6 +90,62 @@
                                             @endforeach
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <th>
+                                            genero
+                                        </th>
+                                        <td>
+                                            {{ $employee->genre }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            nascimento
+                                        </th>
+                                        <td>
+                                            {{ $employee->birth_date }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            endereco
+                                        </th>
+                                        <td>
+                                            {{ $employee->address }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            numero
+                                        </th>
+                                        <td>
+                                            {{ $employee->number }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            bairro
+                                        </th>
+                                        <td>
+                                            {{ $employee->neighborhood }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            cidade
+                                        </th>
+                                        <td>
+                                            {{ $employee->city }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            pais
+                                        </th>
+                                        <td>
+                                            {{ $employee->county }}
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                             <a style="margin-top:20px;" class="btn btn-default" href="{{ url()->previous() }}">

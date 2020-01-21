@@ -71,12 +71,95 @@
                                     {{ trans('cruds.client.fields.email_helper') }}
                                 </p>
                             </div>
+
+                            <div class="form-group {{ $errors->has('genre') ? 'has-error' : '' }}">
+                                <label for="genre">genero</label>
+                                <input type="text" id="genre" name="genre" class="form-control" value="{{ old('genre', isset($client) ? $client->genre : '') }}">
+                                @if($errors->has('genre'))
+                                    <em class="invalid-feedback">
+                                        {{ $errors->first('genre') }}
+                                    </em>
+                                @endif
+                                <p class="helper-block">
+                                    genero
+                                </p>
+                            </div>
+                            <div class="form-group {{ $errors->has('birth_date') ? 'has-error' : '' }}">
+                                <label for="birth_date">nascimento</label>
+                                <input type="text" id="birth_date" name="birth_date" class="form-control" value="{{ old('birth_date', isset($client) ? $client->birth_date : '') }}">
+                                @if($errors->has('birth_date'))
+                                    <em class="invalid-feedback">
+                                        {{ $errors->first('birth_date') }}
+                                    </em>
+                                @endif
+                                <p class="helper-block">
+                                    nascimento
+                                </p>
+                            </div>
+                            <div class="form-group {{ $errors->has('address') ? 'has-error' : '' }}">
+                                <label for="address">endereco</label>
+                                <input type="text" id="address" name="address" class="form-control" value="{{ old('address', isset($client) ? $client->address : '') }}">
+                                @if($errors->has('address'))
+                                    <em class="invalid-feedback">
+                                        {{ $errors->first('address') }}
+                                    </em>
+                                @endif
+                                <p class="helper-block">
+                                    endereço
+                                </p>
+                            </div>
+                            <div class="form-group {{ $errors->has('number') ? 'has-error' : '' }}">
+                                <label for="number">numero</label>
+                                <input type="text" id="number" name="number" class="form-control" value="{{ old('number', isset($client) ? $client->number : '') }}">
+                                @if($errors->has('number'))
+                                    <em class="invalid-feedback">
+                                        {{ $errors->first('number') }}
+                                    </em>
+                                @endif
+                                <p class="helper-block">
+                                    numero
+                                </p>
+                            </div>
+                            <div class="form-group {{ $errors->has('neighborhood') ? 'has-error' : '' }}">
+                                <label for="neighborhood">bairro</label>
+                                <input type="text" id="neighborhood" name="neighborhood" class="form-control" value="{{ old('neighborhood', isset($client) ? $client->neighborhood : '') }}">
+                                @if($errors->has('neighborhood'))
+                                    <em class="invalid-feedback">
+                                        {{ $errors->first('neighborhood') }}
+                                    </em>
+                                @endif
+                                <p class="helper-block">
+                                    bairro
+                                </p>
+                            </div>
+                            <div class="form-group {{ $errors->has('city') ? 'has-error' : '' }}">
+                                <label for="city">cidade</label>
+                                <input type="text" id="city" name="city" class="form-control" value="{{ old('city', isset($client) ? $client->city : '') }}">
+                                @if($errors->has('city'))
+                                    <em class="invalid-feedback">
+                                        {{ $errors->first('city') }}
+                                    </em>
+                                @endif
+                                <p class="helper-block">
+                                    cidade
+                                </p>
+                            </div>
+                            <div class="form-group {{ $errors->has('county') ? 'has-error' : '' }}">
+                                <label for="county">Pais</label>
+                                <input type="text" id="county" name="county" class="form-control" value="{{ old('county', isset($client) ? $client->county : '') }}">
+                                @if($errors->has('county'))
+                                    <em class="invalid-feedback">
+                                        {{ $errors->first('county') }}
+                                    </em>
+                                @endif
+                                <p class="helper-block">
+                                    erro pais
+                                </p>
+                            </div>
                             <div>
                                 <input class="btn btn-danger" type="submit" value="{{ trans('global.save') }}">
                             </div>
                         </form>
-
-
                     </div>
                 </div>
             </div>
