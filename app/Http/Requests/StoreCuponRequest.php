@@ -22,6 +22,14 @@ class StoreCuponRequest extends FormRequest
             'name' => [
                 'required',
             ],
+            'discount' => [
+                'required',
+                'integer',
+            ],
+            'validity' => [
+                'required',
+                'date',
+            ],
         ];
     }
 }

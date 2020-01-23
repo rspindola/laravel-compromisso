@@ -22,6 +22,14 @@ class UpdateCuponRequest extends FormRequest
             'name' => [
                 'required',
             ],
+            'discount' => [
+                'required',
+                'integer',
+            ],
+            'validity' => [
+                'required',
+                'date',
+            ],
         ];
     }
 }
