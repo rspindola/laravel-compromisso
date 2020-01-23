@@ -204,11 +204,12 @@ $(document).ready(function () {
     })
   
     $('.date').datetimepicker({
-      locale: 'pt-br'
+      locale: 'pt-br',
+      format: 'YYYY-MM-DD'
     })
   
     $('.datetime').datetimepicker({
-      format: 'DD/MM/YYYY HH:mm',
+      format: 'YYYY-MM-DD HH:mm',
       locale: 'pt-br',
       sideBySide: true,
       stepping: 15

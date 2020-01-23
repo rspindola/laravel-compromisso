@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             ServicesTableSeeder::class,
             EmployeesTableSeeder::class,
             ClientsTableSeeder::class,
+            CuponsTableSeeder::class,
             AppointmentsTableSeeder::class,
         ]);
     }

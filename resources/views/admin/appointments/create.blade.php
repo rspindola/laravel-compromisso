@@ -88,7 +88,7 @@
                             </div>
                             <div class="form-group {{ $errors->has('price') ? 'has-error' : '' }}">
                                 <label for="price">{{ trans('cruds.appointment.fields.price') }}</label>
-                                <input type="number" id="price" name="price" class="form-control money" value="{{ old('price', isset($appointment) ? $appointment->price : '') }}" max="6">
+                                <input type="number" id="price" name="price" class="form-control money" value="{{ old('price', isset($appointment) ? $appointment->price : '') }}" maxlength="6">
                                 @if($errors->has('price'))
                                     <em class="invalid-feedback">
                                         {{ $errors->first('price') }}

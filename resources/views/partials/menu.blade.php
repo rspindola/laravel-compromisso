@@ -85,6 +85,16 @@
                 </a>
             </li>
             @endcan
+            @can('cupon_access')
+            <li class="">
+                <a href="{{ route("admin.cupons.index") }}">
+                    <span class="pcoded-micon"><i class="ti-file"></i><b>C</b></span>
+                    <span class="pcoded-mtext"
+                        data-i18n="nav.documentation.main">{{ trans('cruds.cupon.title') }}</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+            @endcan
             <li class="">
                 <a href="{{ route("admin.systemCalendar") }}">
                     <span class="pcoded-micon"><i class="ti-file"></i><b>D</b></span>

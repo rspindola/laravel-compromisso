@@ -145,7 +145,7 @@
                                 <a href="#!">
                                     <img src="{{asset('assets/files/assets/images/avatar-4.jpg')}}" class="img-radius"
                                         alt="User-Profile-Image">
-                                    <span>John Doe</span>
+                                    <span>{{auth()->user()->name}}</span>
                                     <i class="ti-angle-down"></i>
                                 </a>
                                 <ul class="show-notification profile-notification">
