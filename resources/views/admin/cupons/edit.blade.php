@@ -16,10 +16,13 @@
                 <div class="page-header-breadcrumb">
                     <ul class="breadcrumb-title">
                         <li class="breadcrumb-item">
-                            <a href="index-2.html">
+                            <a href="{{route('admin.home')}}">
                                 <i class="icofont icofont-home"></i>
                             </a>
                         </li>
+                        <li class="breadcrumb-item"><a href="{{route('admin.cupons.index')}}">
+                            {{ trans('cruds.cupon.title') }}
+                        </a></li>
                         <li class="breadcrumb-item"><a href="#!">{{ trans('global.edit') }} {{ trans('cruds.cupon.title_singular') }}</a></li>
                     </ul>
                 </div>

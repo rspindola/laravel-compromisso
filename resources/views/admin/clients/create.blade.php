@@ -8,7 +8,7 @@
                     <i class="icofont icofont icofont icofont-file-document bg-c-pink"></i>
                     <div class="d-inline">
                         <h4>{{ trans('global.create') }} {{ trans('cruds.client.title_singular') }}</h4>
-                        <span>Lista de empregados cadastrados no sistema</span>
+                        <span>Formulário de criação de empregados no sistema</span>
                     </div>
                 </div>
             </div>
@@ -16,10 +16,13 @@
                 <div class="page-header-breadcrumb">
                     <ul class="breadcrumb-title">
                         <li class="breadcrumb-item">
-                            <a href="index-2.html">
+                            <a href="{{route('admin.home')}}">
                                 <i class="icofont icofont-home"></i>
                             </a>
                         </li>
+                        <li class="breadcrumb-item"><a href="{{route('admin.clients.index')}}">
+                            {{ trans('cruds.client.title') }}
+                        </a></li>
                         <li class="breadcrumb-item"><a href="#!">{{ trans('global.create') }} {{ trans('cruds.client.title_singular') }}</a>
                         </li>
                     </ul>

@@ -3,7 +3,7 @@
 <div class="page-wrapper">                           
     <div class="page-header card">
         <div class="row align-items-end">
-            <div class="col-lg-8">
+            <div class="col-lg-6">
                 <div class="page-header-title">
                     <i
                         class="icofont icofont icofont icofont-file-document bg-c-pink"></i>
@@ -13,14 +13,17 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <div class="page-header-breadcrumb">
                     <ul class="breadcrumb-title">
                         <li class="breadcrumb-item">
-                            <a href="index-2.html">
+                            <a href="{{route('admin.home')}}">
                                 <i class="icofont icofont-home"></i>
                             </a>
                         </li>
+                        <li class="breadcrumb-item"><a href="{{route('admin.appointments.index')}}">
+                            {{ trans('cruds.appointment.title') }}
+                        </a></li>
                         <li class="breadcrumb-item"><a href="#!">{{ trans('global.edit') }} {{ trans('cruds.appointment.title_singular') }}</a>
                         </li>
                     </ul>

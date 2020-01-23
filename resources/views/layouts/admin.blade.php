@@ -98,7 +98,7 @@
                         <a class="mobile-search morphsearch-search" href="#">
                             <i class="ti-search"></i>
                         </a>
-                        <a href="index-2.html">
+                        <a href="{{route('admin.home')}}">
                             <img class="img-fluid" src="{{asset('assets/files/assets/images/logo.png')}}" alt="{{ trans('panel.site_title') }}" />
                         </a>
                         <a class="mobile-options">
