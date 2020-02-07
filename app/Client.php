@@ -28,6 +28,8 @@ class Client extends Model
         'neighborhood',
         'city',
         'county',
+        'state',
+        'zipcode',
         'created_at',
         'updated_at',
         'deleted_at',

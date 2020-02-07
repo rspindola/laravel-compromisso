@@ -34,6 +34,8 @@ class Employee extends Model implements HasMedia
         'number',
         'neighborhood',
         'city',
+        'zipcode',
+        'state',
         'county',
         'created_at',
         'updated_at',
