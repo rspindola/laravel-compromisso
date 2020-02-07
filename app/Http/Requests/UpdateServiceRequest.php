@@ -22,6 +22,9 @@ class UpdateServiceRequest extends FormRequest
             'name' => [
                 'required',
             ],
+            'price' => [
+                'required',
+            ],
         ];
     }
 }

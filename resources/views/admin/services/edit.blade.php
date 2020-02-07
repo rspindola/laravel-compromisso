@@ -39,7 +39,7 @@
                             @csrf
                             @method('PUT')
                             <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-                                <label for="name">{{ trans('cruds.service.fields.name') }}*</label>
+                                <label for="name">{{ trans('cruds.service.fields.name') }}</label>
                                 <input type="text" id="name" name="name" class="form-control" value="{{ old('name', isset($service) ? $service->name : '') }}" required>
                                 @if($errors->has('name'))
                                     <em class="invalid-feedback">
@@ -52,7 +52,7 @@
                             </div>
                             <div class="form-group {{ $errors->has('price') ? 'has-error' : '' }}">
                                 <label for="price">{{ trans('cruds.service.fields.price') }}</label>
-                                <input type="text" id="price" name="price" class="form-control money" value="{{ old('price', isset($service) ? $service->price : '') }}" maxlength="6">
+                                <input type="text" id="price" name="price" class="form-control money" value="{{ old('price', isset($service) ? $service->price : '') }}" maxlength="6" required>
                                 @if($errors->has('price'))
                                     <em class="invalid-feedback">
                                         {{ $errors->first('price') }}
