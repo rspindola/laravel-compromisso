@@ -44,7 +44,12 @@ table.dataTable thead th {
 .select2-selection__rendered {
     padding-bottom: 5px !important;
 }
-
+.has-error label{
+    color: #dc3545;
+}
+.has-error .form-control{
+    border: 1px #dc3545 solid;
+}
 .has-error .invalid-feedback {
     display: block !important;
 }

@@ -27,7 +27,6 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/files/assets/icon/icofont/css/icofont.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/files/assets/pages/flag-icon/flag-icon.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/files/assets/pages/menu-search/css/component.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/files/assets/css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/files/assets/css/jquery.mCustomScrollbar.css')}}">
     <link rel="stylesheet" href="{{asset('bower_components/sweetalert/css/sweetalert.css')}}" />
     {{-- dataTables --}}
@@ -43,6 +42,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
     <link href="{{asset('bower_components/dropzone/dist/min/dropzone.min.css')}}" rel="stylesheet" />
     
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/files/assets/css/style.css')}}">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet" />
     @yield('styles')
 </head>

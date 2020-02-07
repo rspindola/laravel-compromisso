@@ -71,12 +71,12 @@
                         </div>
                         <div class="row">
                             <div class="col-md-4">
-                                <div class="form-group {{ $errors->has('password_confirmation') ? 'has-error' : '' }}">
-                                    <label for="password_confirmation">{{ trans('cruds.user.fields.password_confirmation') }}</label>
-                                    <input type="password" id="password_confirmation" name="password_confirmation" class="form-control">
-                                    @if($errors->has('password_confirmation'))
+                                <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
+                                    <label for="password">{{ trans('cruds.user.fields.password') }}</label>
+                                    <input type="password" id="password" name="password" class="form-control">
+                                    @if($errors->has('password'))
                                         <em class="invalid-feedback">
-                                            {{ $errors->first('password_confirmation') }}
+                                            {{ $errors->first('password') }}
                                         </em>
                                     @endif
                                     <p class="helper-block">
@@ -85,12 +85,12 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
-                                    <label for="password">{{ trans('cruds.user.fields.password') }}</label>
-                                    <input type="password" id="password" name="password" class="form-control">
-                                    @if($errors->has('password'))
+                                <div class="form-group {{ $errors->has('password_confirmation') ? 'has-error' : '' }}">
+                                    <label for="password_confirmation">{{ trans('cruds.user.fields.password_confirmation') }}</label>
+                                    <input type="password" id="password_confirmation" name="password_confirmation" class="form-control">
+                                    @if($errors->has('password_confirmation'))
                                         <em class="invalid-feedback">
-                                            {{ $errors->first('password') }}
+                                            {{ $errors->first('password_confirmation') }}
                                         </em>
                                     @endif
                                     <p class="helper-block">
