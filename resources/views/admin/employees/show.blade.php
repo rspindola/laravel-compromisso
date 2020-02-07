@@ -41,6 +41,18 @@
                                 <tbody>
                                     <tr>
                                         <th>
+                                            {{ trans('cruds.employee.fields.photo') }}
+                                        </th>
+                                        <td>
+                                            @if($employee->photo)
+                                                <a href="{{ $employee->photo->getUrl() }}" target="_blank">
+                                                    <img src="{{ $employee->photo->getUrl('thumb') }}" width="50px" height="50px">
+                                                </a>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
                                             {{ trans('cruds.employee.fields.id') }}
                                         </th>
                                         <td>
@@ -71,18 +83,7 @@
                                             {{ $employee->phone }}
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <th>
-                                            {{ trans('cruds.employee.fields.photo') }}
-                                        </th>
-                                        <td>
-                                            @if($employee->photo)
-                                                <a href="{{ $employee->photo->getUrl() }}" target="_blank">
-                                                    <img src="{{ $employee->photo->getUrl('thumb') }}" width="50px" height="50px">
-                                                </a>
-                                            @endif
-                                        </td>
-                                    </tr>
+                                    
                                     <tr>
                                         <th>
                                             Services
@@ -95,7 +96,7 @@
                                     </tr>
                                     <tr>
                                         <th>
-                                            genero
+                                            {{ trans('cruds.employee.fields.genre') }}
                                         </th>
                                         <td>
                                             {{ $employee->genre }}
@@ -103,7 +104,7 @@
                                     </tr>
                                     <tr>
                                         <th>
-                                            nascimento
+                                            {{ trans('cruds.employee.fields.birth_date') }}
                                         </th>
                                         <td>
                                             {{ $employee->birth_date }}
@@ -111,7 +112,7 @@
                                     </tr>
                                     <tr>
                                         <th>
-                                            endereco
+                                            {{ trans('cruds.employee.fields.address') }}
                                         </th>
                                         <td>
                                             {{ $employee->address }}
@@ -119,7 +120,7 @@
                                     </tr>
                                     <tr>
                                         <th>
-                                            numero
+                                            {{ trans('cruds.employee.fields.number') }}
                                         </th>
                                         <td>
                                             {{ $employee->number }}
@@ -127,7 +128,7 @@
                                     </tr>
                                     <tr>
                                         <th>
-                                            bairro
+                                            {{ trans('cruds.employee.fields.neighborhood') }}
                                         </th>
                                         <td>
                                             {{ $employee->neighborhood }}
@@ -135,7 +136,7 @@
                                     </tr>
                                     <tr>
                                         <th>
-                                            cidade
+                                            {{ trans('cruds.employee.fields.city') }}
                                         </th>
                                         <td>
                                             {{ $employee->city }}
@@ -143,7 +144,7 @@
                                     </tr>
                                     <tr>
                                         <th>
-                                            pais
+                                            {{ trans('cruds.employee.fields.county') }}
                                         </th>
                                         <td>
                                             {{ $employee->county }}
