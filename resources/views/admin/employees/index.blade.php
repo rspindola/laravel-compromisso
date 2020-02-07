@@ -5,10 +5,10 @@
         <div class="row align-items-end">
             <div class="col-lg-8">
                 <div class="page-header-title">
-                    <i class="icofont icofont icofont icofont-file-document bg-c-pink"></i>
+                    <i class="icofont icofont-users-social bg-c-blue"></i>
                     <div class="d-inline">
                         <h4>{{ trans('cruds.employee.title') }}</h4>
-                        <span>Lista de empregados cadastrados no sistema</span>
+                        <span>Lista de funcionários cadastrados no sistema</span>
                     </div>
                 </div>
             </div>
@@ -58,7 +58,7 @@
 
                                     </th>
                                     <th>
-                                        {{ trans('cruds.employee.fields.id') }}
+                                        {{ trans('cruds.employee.fields.photo') }}
                                     </th>
                                     <th>
                                         {{ trans('cruds.employee.fields.name') }}
@@ -68,9 +68,6 @@
                                     </th>
                                     <th>
                                         {{ trans('cruds.employee.fields.phone') }}
-                                    </th>
-                                    <th>
-                                        {{ trans('cruds.employee.fields.photo') }}
                                     </th>
                                     <th>
                                         {{ trans('cruds.employee.fields.services') }}
@@ -134,11 +131,10 @@
     ajax: "{{ route('admin.employees.index') }}",
     columns: [
         { data: 'placeholder', name: 'placeholder' },
-        { data: 'id', name: 'id' },
+        { data: 'photo', name: 'photo', sortable: false, searchable: false },
         { data: 'name', name: 'name' },
         { data: 'email', name: 'email' },
         { data: 'phone', name: 'phone' },
-        { data: 'photo', name: 'photo', sortable: false, searchable: false },
         { data: 'services', name: 'services.name' },
         { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],

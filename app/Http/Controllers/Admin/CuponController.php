@@ -47,8 +47,8 @@ class CuponController extends Controller
             $table->editColumn('price', function ($row) {
                 return $row->discount ? $row->discount : "";
             });
-            $table->editColumn('finish_time', function ($row) {
-                return $row->finish_time ? $row->finish_time : "";
+            $table->editColumn('validity', function ($row) {
+                return $row->validity ? \Carbon\Carbon::parse($row->validity)->format('d/m/Y') : "";
             });
 
             $table->rawColumns(['actions', 'placeholder']);

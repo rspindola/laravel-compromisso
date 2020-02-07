@@ -5,8 +5,7 @@
         <div class="row align-items-end">
             <div class="col-lg-8">
                 <div class="page-header-title">
-                    <i
-                        class="icofont icofont icofont icofont-file-document bg-c-pink"></i>
+                    <i class="icofont icofont-repair bg-c-blue"></i>
                     <div class="d-inline">
                         <h4>{{ trans('cruds.service.title') }}</h4>
                         <span>Lista de serviços cadastrados no sistema</span>

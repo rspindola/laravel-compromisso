@@ -104,8 +104,8 @@ return [
         ],
     ],
     'employee'       => [
-        'title'          => 'Empregados',
-        'title_singular' => 'Empregado',
+        'title'          => 'Funcionários',
+        'title_singular' => 'Funcionário',
         'fields'         => [
             'id'                => 'ID',
             'id_helper'         => '',
@@ -155,7 +155,7 @@ return [
             'id_helper'          => '',
             'client'             => 'Cliente',
             'client_helper'      => '',
-            'employee'           => 'Empregado',
+            'employee'           => 'Funcionário',
             'employee_helper'    => '',
             'start_time'         => 'Inicio',
             'start_time_helper'  => '',

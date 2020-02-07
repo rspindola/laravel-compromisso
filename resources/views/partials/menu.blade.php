@@ -12,6 +12,16 @@
                     <span class="pcoded-mcaret"></span>
                 </a>
                 <ul class="pcoded-submenu">
+                    @can('user_access')
+                    <li class="">
+                        <a href="{{ route("admin.users.index") }}">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext"
+                                data-i18n="nav.dash.default">{{ trans('cruds.user.title') }}</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                    @endcan
                     @can('permission_access')
                     <li class="">
                         <a href="{{ route("admin.permissions.index") }}">
@@ -28,16 +38,6 @@
                             <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                             <span class="pcoded-mtext"
                                 data-i18n="nav.dash.default">{{ trans('cruds.role.title') }}</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
-                    @endcan
-                    @can('user_access')
-                    <li class="">
-                        <a href="{{ route("admin.users.index") }}">
-                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext"
-                                data-i18n="nav.dash.default">{{ trans('cruds.user.title') }}</span>
                             <span class="pcoded-mcaret"></span>
                         </a>
                     </li>

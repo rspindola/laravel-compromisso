@@ -5,8 +5,7 @@
         <div class="row align-items-end">
             <div class="col-lg-8">
                 <div class="page-header-title">
-                    <i
-                        class="icofont icofont icofont icofont-file-document bg-c-pink"></i>
+                    <i class="icofont icofont-repair bg-c-blue"></i>
                     <div class="d-inline">
                         <h4>{{ trans('global.create') }} {{ trans('cruds.service.title_singular') }}</h4>
                         <span>Formulário de cadastro de serviço no sistema</span>

@@ -60,6 +60,15 @@ class AppointmentsController extends Controller
             $table->editColumn('comments', function ($row) {
                 return $row->comments ? $row->comments : "";
             });
+
+            $table->editColumn('start_time', function ($row) {
+                return $row->start_time ? \Carbon\Carbon::parse($row->start_time)->format('d/m/Y H:i') : "";
+            });
+
+            $table->editColumn('finish_time', function ($row) {
+                return $row->finish_time ? \Carbon\Carbon::parse($row->finish_time)->format('d/m/Y H:i'): "";
+            });
+
             $table->editColumn('services', function ($row) {
                 $labels = [];
 

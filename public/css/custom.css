@@ -106,3 +106,12 @@ table.dataTable thead .sorting_desc {
     padding-left: 0px;
     padding-right: 0px;
 }
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+ background: #fff;
+ color: #000;
+ padding: 0 8px;
+}
+
+.pcoded .pcoded-navbar .pcoded-item>li>a>.pcoded-micon b {
+    line-height: 2;
+}

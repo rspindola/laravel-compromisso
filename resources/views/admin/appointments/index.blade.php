@@ -5,7 +5,7 @@
         <div class="row align-items-end">
             <div class="col-lg-8">
                 <div class="page-header-title">
-                    <i class="icofont icofont icofont icofont-file-document bg-c-pink"></i>
+                    <i class="icofont icofont icofont icofont icofont-ui-clock bg-c-blue"></i>
                     <div class="d-inline">
                         <h4>{{ trans('cruds.appointment.title') }}</h4>
                         <span>Lista de horários cadastrados no sistema</span>
@@ -111,7 +111,7 @@ $(function () {
             });
 
             if (ids.length === 0) {
-                alert('{{ trans('global.datatables.zero_selected') }}')
+                swal('Erro', '{{ trans('global.datatables.zero_selected') }}', 'error');
                 return
             }
 
@@ -157,13 +157,16 @@ $(function () {
     });
 });
 
+$('#dataTables').on( 'click', 'tbody tr .teste', function () {
+    alert('teste')
+});
+
+
 function deleteData($id){
     var id = $id
-    console.log(id)
     var data_table = $('#dataTables-example').DataTable();
     var url = '{{ route("admin.appointments.destroy", ":id") }}';
     url = url.replace(':id', id);
-    console.log(url)
     var removeClass = '#row-id-'+id
     swal({
         title: "CONFIRMAÇÃO",

@@ -129,6 +129,8 @@ $(document).ready(function () {
     });
 
 
+    $("body").tooltip({ selector: '[data-toggle=tooltip]' });
+
 
     /* // i18next.use(window.i18nextXHRBackend).init({
     //     debug: !1,
@@ -139,9 +141,9 @@ $(document).ready(function () {
     //     returnObjects: !0
     // }, function (err, t) {
     //     jqueryI18next.init(i18next, $)
-    }), */ 
-    
-    
+    }), */
+
+
     $(".lng-dropdown a").on("click", function () {
         var $this = $(this),
             selected_lng = $this.data("lng");
@@ -188,70 +190,90 @@ $(document).on('click', '[data-toggle="lightbox"]', function (event) {
 
 $(document).ready(function () {
     window._token = $('meta[name="csrf-token"]').attr('content')
-  
+
     var allEditors = document.querySelectorAll('.ckeditor');
     for (var i = 0; i < allEditors.length; ++i) {
-      ClassicEditor.create(
-          allEditors[i],
-          {
-              removePlugins: ['ImageUpload']
-          }
-      );
+        ClassicEditor.create(
+            allEditors[i], {
+                removePlugins: ['ImageUpload']
+            }
+        );
     }
-  
+
     moment.updateLocale('pt-br', {
-      week: {dow: 1} // Monday is the first day of the week
+        week: {
+            dow: 1
+        } // Monday is the first day of the week
     })
-  
+
     $('.date').datetimepicker({
-      locale: 'pt-br',
-      format: 'YYYY-MM-DD'
+        locale: 'pt-br',
+        format: 'YYYY-MM-DD'
     })
-  
+
     $('.datetime').datetimepicker({
-      format: 'YYYY-MM-DD HH:mm',
-      locale: 'pt-br',
-      sideBySide: true,
-      stepping: 15
+        format: 'YYYY-MM-DD HH:mm',
+        locale: 'pt-br',
+        sideBySide: true,
+        stepping: 15,
+        icons: {
+            time: "icofont icofont-clock-time",
+            date: "icofont icofont-ui-calendar",
+            up: "icofont icofont-rounded-up",
+            down: "icofont icofont-rounded-down",
+            next: "icofont icofont-rounded-right",
+            previous: "icofont icofont-rounded-left"
+        }
     })
+
+    $('#start_time').datetimepicker({
+        minDate: moment()
+    });
 
     $('#finish_time').datetimepicker({
         useCurrent: false //Important! See issue #1075
     });
+
     $("#start_time").on("dp.change", function (e) {
         $('#finish_time').data("DateTimePicker").minDate(e.date);
     });
-    $("#finish_time").on("dp.change", function (e) {
-        $('#start_time').data("DateTimePicker").maxDate(e.date);
-    });
-  
+
+    // $("#finish_time").on("dp.change", function (e) {
+    //     $('#start_time').data("DateTimePicker").maxDate(e.date);
+    // });
+
+    $('.prev i').removeClass();
+    $('.prev i').addClass("fa fa-chevron-left");
+
+    $('.next i').removeClass();
+    $('.next i').addClass("fa fa-chevron-right");
+
     $('.timepicker').datetimepicker({
-      format: 'HH:mm:ss'
+        format: 'HH:mm:ss'
     })
-  
+
     $('.select-all').click(function () {
-      let $select2 = $(this).parent().siblings('.select2')
-      $select2.find('option').prop('selected', 'selected')
-      $select2.trigger('change')
+        let $select2 = $(this).parent().siblings('.select2')
+        $select2.find('option').prop('selected', 'selected')
+        $select2.trigger('change')
     })
     $('.deselect-all').click(function () {
-      let $select2 = $(this).parent().siblings('.select2')
-      $select2.find('option').prop('selected', '')
-      $select2.trigger('change')
+        let $select2 = $(this).parent().siblings('.select2')
+        $select2.find('option').prop('selected', '')
+        $select2.trigger('change')
     })
-  
+
     $('.select2').select2()
-  
+
     $('.treeview').each(function () {
-      var shouldExpand = false
-      $(this).find('li').each(function () {
-        if ($(this).hasClass('active')) {
-          shouldExpand = true
+        var shouldExpand = false
+        $(this).find('li').each(function () {
+            if ($(this).hasClass('active')) {
+                shouldExpand = true
+            }
+        })
+        if (shouldExpand) {
+            $(this).addClass('active')
         }
-      })
-      if (shouldExpand) {
-        $(this).addClass('active')
-      }
     })
-  })
-  
+})

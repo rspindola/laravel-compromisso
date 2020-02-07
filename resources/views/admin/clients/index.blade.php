@@ -5,10 +5,10 @@
         <div class="row align-items-end">
             <div class="col-lg-8">
                 <div class="page-header-title">
-                    <i class="icofont icofont icofont icofont-file-document bg-c-pink"></i>
+                    <i class="icofont icofont-users-alt-1 bg-c-blue"></i>
                     <div class="d-inline">
                         <h4>{{ trans('cruds.client.title') }}</h4>
-                        <span>Lista de empregados cadastrados no sistema</span>
+                        <span>Lista de clientes cadastrados no sistema</span>
                     </div>
                 </div>
             </div>

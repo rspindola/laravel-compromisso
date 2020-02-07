@@ -5,10 +5,10 @@
         <div class="row align-items-end">
             <div class="col-lg-8">
                 <div class="page-header-title">
-                    <i class="icofont icofont icofont icofont-file-document bg-c-pink"></i>
+                    <i class="icofont icofont-users-alt-1 bg-c-blue"></i>
                     <div class="d-inline">
                         <h4>{{ trans('global.show') }} {{ trans('cruds.client.title_singular') }}</h4>
-                        <span>Detalhes de empregados cadastrados no sistema</span>
+                        <span>Detalhes de clientes cadastrados no sistema</span>
                     </div>
                 </div>
             </div>
@@ -88,7 +88,7 @@
                                             nascimento
                                         </th>
                                         <td>
-                                            {{ $client->birth_date }}
+                                            {{ \Carbon\Carbon::parse($client->birth_date)->format('d/m/Y') }}
                                         </td>
                                     </tr>
                                     <tr>
@@ -129,6 +129,14 @@
                                         </th>
                                         <td>
                                             {{ $client->county }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Cliente desde:
+                                        </th>
+                                        <td>
+                                            {{ \Carbon\Carbon::parse($client->created_at)->format('d/m/Y H:i') }}
                                         </td>
                                     </tr>
                                 </tbody>

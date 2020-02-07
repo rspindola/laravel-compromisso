@@ -5,7 +5,7 @@
         <div class="row align-items-end">
             <div class="col-lg-8">
                 <div class="page-header-title">
-                    <i class="icofont icofont icofont icofont-file-document bg-c-pink"></i>
+                    <i class="icofont icofont-user-suited bg-c-blue"></i>
                     <div class="d-inline">
                         <h4>{{ trans('cruds.role.title') }}</h4>
                         <span>Lista de usuários cadastrados no sistema</span>

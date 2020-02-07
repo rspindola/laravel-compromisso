@@ -5,10 +5,10 @@
         <div class="row align-items-end">
             <div class="col-lg-8">
                 <div class="page-header-title">
-                    <i class="icofont icofont icofont icofont-file-document bg-c-pink"></i>
+                    <i class="icofont icofont-users-social bg-c-blue"></i>
                     <div class="d-inline">
                         <h4>{{ trans('global.edit') }} {{ trans('cruds.employee.title_singular') }}</h4>
-                        <span>Formulário de edição de empregados no sistema</span>
+                        <span>Formulário de edição de funcionários no sistema</span>
                     </div>
                 </div>
             </div>

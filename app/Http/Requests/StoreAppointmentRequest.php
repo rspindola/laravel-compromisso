@@ -30,8 +30,7 @@ class StoreAppointmentRequest extends FormRequest
             ],
             'finish_time' => [
                 'required',
-                'date_format:' . config('panel.date_format') . ' ' . config('panel.time_format'),
-                'after:start_date'
+                'date_format:' . config('panel.date_format') . ' ' . config('panel.time_format')
             ],
             'services.*'  => [
                 'integer',

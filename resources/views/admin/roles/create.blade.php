@@ -5,7 +5,7 @@
         <div class="row align-items-end">
             <div class="col-lg-8">
                 <div class="page-header-title">
-                    <i class="icofont icofont icofont icofont-file-document bg-c-pink"></i>
+                    <i class="icofont icofont-user-suited bg-c-blue"></i>
                     <div class="d-inline">
                         <h4>{{ trans('global.create') }} {{ trans('cruds.role.title_singular') }}</h4>
                         <span>Cadastrar nova função para o usuário no sistema</span>

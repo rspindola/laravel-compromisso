@@ -5,8 +5,7 @@
         <div class="row align-items-end">
             <div class="col-lg-8">
                 <div class="page-header-title">
-                    <i
-                        class="icofont icofont icofont icofont-file-document bg-c-pink"></i>
+                    <i class="icofont icofont-users-alt-5 bg-c-blue"></i>
                     <div class="d-inline">
                         <h4>{{ trans('cruds.user.title') }}</h4>
                         <span>Lista de usuários cadastrados no sistema</span>
@@ -105,30 +104,19 @@
                                             </td>
                                             <td>
                                                 @can('user_show')
-                                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.users.show', $user->id) }}">
-                                                        {{ trans('global.view') }}
-                                                    </a>
+                                                    <a href="{{ route('admin.users.show', $user->id) }}" class="m-r-15 text-muted" data-toggle="tooltip" title="Exibir"><i class="icofont icofont-eye-alt"></i></a>
                                                 @endcan
                 
                                                 @can('user_edit')
-                                                    <a class="btn btn-xs btn-info" href="{{ route('admin.users.edit', $user->id) }}">
-                                                        {{ trans('global.edit') }}
-                                                    </a>
+                                                    <a href="{{ route('admin.users.edit', $user->id) }}" class="m-r-15 text-muted" data-toggle="tooltip" data-placement="top" title="Editar"><i class="icofont icofont-ui-edit"></i></a>
                                                 @endcan
                 
                                                 @can('user_delete')
                                                 <a href="javascript:void(0);" onclick="deleteData({{$user->id}})"
-                                                    class="text-muted alert-success-cancel">
+                                                    class="text-muted alert-success-cancel" data-toggle="tooltip" data-placement="top" title="Deletar">
                                                     <i class="icofont icofont-delete-alt"></i></a>
-                                                    {{-- <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
-                                                        <input type="hidden" name="_method" value="DELETE">
-                                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                        <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
-                                                    </form> --}}
                                                 @endcan
-                
                                             </td>
-                
                                         </tr>
                                     @endforeach
                                 </tbody>

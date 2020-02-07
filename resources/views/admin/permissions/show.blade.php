@@ -5,7 +5,7 @@
         <div class="row align-items-end">
             <div class="col-lg-8">
                 <div class="page-header-title">
-                    <i class="icofont icofont icofont icofont-file-document bg-c-pink"></i>
+                    <i class="icofont icofont-ui-block bg-c-blue"></i>
                     <div class="d-inline">
                         <h4>{{ trans('global.show') }} {{ trans('cruds.permission.title') }}</h4>
                         <span>Detalhes da permissáo cadastrada no sistema</span>
