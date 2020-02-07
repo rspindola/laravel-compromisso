@@ -53,6 +53,8 @@ return [
             'email_verified_at_helper' => '',
             'password'                 => 'Senha',
             'password_helper'          => '',
+            'password_confirmation'         => 'Confirmar Senha',
+            'password_confirmation_helper'  => '',
             'roles'                    => 'Funções',
             'roles_helper'             => '',
             'remember_token'           => 'Lembrar',
