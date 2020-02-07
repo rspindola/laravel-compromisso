@@ -141,15 +141,18 @@
                 },
                 {
                     data: 'name',
-                    name: 'name'
+                    name: 'name',
+                    sClass: 'col-md-4'
                 },
                 {
                     data: 'price',
-                    name: 'price'
+                    name: 'price',
+                    sClass: 'text-right col-md-3',
                 },
                 {
                     data: 'actions',
-                    name: '{{ trans('global.actions ') }}'
+                    name: '{{ trans('global.actions ') }}',
+                    sClass: 'col-md-3'
                 }
             ],
             order: [

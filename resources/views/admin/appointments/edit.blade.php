@@ -111,8 +111,8 @@
                                             <span class="btn btn-info btn-xs deselect-all">{{ trans('global.deselect_all') }}</span> --}}
                                         </label>
                                         <select name="services[]" id="services" class="form-control select2" multiple="multiple">
-                                            @foreach($services as $id => $services)
-                                                <option value="{{ $id }}" {{ (in_array($id, old('services', [])) || isset($appointment) && $appointment->services->contains($id)) ? 'selected' : '' }}>{{ $services }}</option>
+                                            @foreach($services as $service)
+                                                <option value="{{ $service->id }}" data-price={{$service->price}} {{ (in_array($service->id, old('services', [])) || isset($appointment) && $appointment->services->contains($service->id)) ? 'selected' : '' }}>{{ $service->name }}</option>
                                             @endforeach
                                         </select>
                                         @if($errors->has('services'))
@@ -128,7 +128,9 @@
                                 <div class="col-md-3">
                                     <div class="form-group {{ $errors->has('price') ? 'has-error' : '' }}">
                                         <label for="price">{{ trans('cruds.appointment.fields.price') }}</label>
-                                        <input type="number" id="price" name="price" class="form-control money" value="{{ old('price', isset($appointment) ? $appointment->price : '') }}" maxlength="6">
+                                        <input type="text" id="price" name="price" class="form-control money" 
+                                            value="{{ old('price', isset($appointment) ? $appointment->price : '') }}" 
+                                            maxlength="6" readonly="true" ondblclick="this.readOnly='';">
                                         @if($errors->has('price'))
                                             <em class="invalid-feedback">
                                                 {{ $errors->first('price') }}
@@ -169,6 +171,15 @@
     <script>
         $(document).ready(function(){
             $('.money').mask('#.##0,00', {reverse: true});
+        });
+
+        $('#services').change(function() {
+            var sum = 0.00;
+            $('#services :selected').each(function() {
+                console.log('float', parseFloat($(this).data('price')))
+                sum += parseFloat($(this).data('price'));
+            });
+            $('#price').val(sum.toFixed(2))
         });
     </script>
 @endsection

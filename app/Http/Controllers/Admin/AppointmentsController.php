@@ -95,14 +95,13 @@ class AppointmentsController extends Controller
 
         $employees = Employee::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $services = Service::all()->pluck('name', 'id');
+        $services = Service::all();
 
         return view('admin.appointments.create', compact('clients', 'employees', 'services'));
     }
 
     public function store(StoreAppointmentRequest $request)
     {
-        return dd($request->all());
         $appointment = Appointment::create($request->all());
         $appointment->services()->sync($request->input('services', []));
         
@@ -119,7 +118,7 @@ class AppointmentsController extends Controller
 
         $employees = Employee::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $services = Service::all()->pluck('name', 'id');
+        $services = Service::all();
 
         $appointment->load('client', 'employee', 'services');
 

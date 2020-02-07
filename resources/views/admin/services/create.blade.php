@@ -77,7 +77,7 @@
     <script src="{{asset('bower_components/jquery-mask/dist/jquery.mask.min.js')}}"></script>
     <script>
         $(document).ready(function(){
-            $('.money').mask('#.##0,00', {reverse: true});
+            $('.money').mask('#.##0.00', {reverse: true});
         });
     </script>
-@endsection   
+@endsection
